@@ -289,8 +289,8 @@ nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
 function addArtist(artists){
-    artists.push(21, 'Harper Nettesheim', '1997-2020', 'Web Design', 'American', 'I love computer programming!')
-
+  let me = {id:21, name: 'Harper Nettesheim', years: '1997-2020', genre: 'Web Design', nationality: 'American', genre: 'I love computer programming!'};
+    artists.push(me);
     return artists;
   }
 
