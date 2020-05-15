@@ -208,11 +208,25 @@ const artists = [
 (1) Name of the first artist in the array
 (2) Bio of the third artist in the array */
 
+console.log(artists[0].name);
+console.log(artists[2].bio);
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
+let newList = [...artists];
 
+for (let i=0; i < artists.length; i++){
+  
+  
+  
+  if (i === 10){
+    newList[i].name = 'Vinecent Van Gogh';
+  }
+  
+}
+
+console.log(newList);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -223,10 +237,11 @@ const artists = [
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(id, name) {
-    /* code here */
+    const index = name[id];
+    return `The artist at index ${index.id} is ${index.name}`;
   }
   
-  /**
+  console.log(getArtistByIndex(0, artists));
 
 
 /* Task 4: Create a function called `removeArtist` that takes two arguments:
@@ -237,23 +252,34 @@ function getArtistByIndex(id, name) {
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset.
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(artists, index) {
+    return artists[index].shift;
   }
   
-  /**
+  console.log(removeArtist(artists, 0));
 
 
-/* Task 5: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
+/* Task 5: Create a function called lotsOfArt() that takes artists as an argument and returns an 
+array with names of artists who painted more than 100 paintings */
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(artists){
 
-    /* Code here */
+  let artCounter = 0;
+    for (let i = 0; i < artists.length; i++){
+      if(artists[i].paintings > 100)
+      {
+        artCounter++;
+      }
+    }
 
+    return artCounter;
   }
 
 
-/* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
+
+
+/* Task 6: Create a function called `addArtist` that can accept an array of information and 
+add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
 
 id: 21
 name: Your Name Here, 
@@ -262,10 +288,10 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
-function addArtist(/* Code here */){
+function addArtist(artists){
+    artists.push(21, 'Harper Nettesheim', '1997-2020', 'Web Design', 'American', 'I love computer programming!')
 
-    /* Code here */
-
+    return artists;
   }
 
 
